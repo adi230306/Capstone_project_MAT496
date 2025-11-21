@@ -50,11 +50,16 @@ Make a short -  3-5 min video of yourself, put it on youtube/googledrive, and pu
 
 I plan to execute these steps to complete my project.
 
-- [TODO] Step 1 involves blah blah
-- [TODO] Step 2 involves blah blah
-- [TODO] Step 3 involves blah blah
-- ...
-- [TODO] Step n involves blah blah
+- [TODO] Step 1 involves setting up the project structure and defining the state schema
+- [TODO] Step 2 involves implementing the search node with web search tool integration
+- [TODO] Step 3 involves building the retrieval and parsing node for content extraction
+- [TODO] Step 4 involves creating the research agent node with multi-perspective analysis
+- [TODO] Step 5 involves implementing the outline generation node with structured output
+- [TODO] Step 6 involves building the drafting node for section-wise content creation
+- [TODO] Step 7 involves creating the synthesis node for coherent article assembly
+- [TODO] Step 8 involves adding the refinement node for quality assurance
+- [TODO] Step 9 involves testing the complete workflow with various topics
+- [TODO] Step 10 involves documentation and final project submission
 
 ## Conclusion:
 
