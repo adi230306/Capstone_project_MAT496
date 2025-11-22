@@ -51,8 +51,8 @@ Make a short -  3-5 min video of yourself, put it on youtube/googledrive, and pu
 I plan to execute these steps to complete my project.
 
 - [DONE] Setting up the project structure and defining the state schema
-- [DONE] Implement the search node with web search tool integration
-- [TODO] Step 3 involves building the retrieval and parsing node for content extraction
+- [DONE] Implement the search node with Tavily tool integration
+- [DONE] Build retrieval and parsing node for content extraction
 - [TODO] Step 4 involves creating the research agent node with multi-perspective analysis
 - [TODO] Step 5 involves implementing the outline generation node with structured output
 - [TODO] Step 6 involves building the drafting node for section-wise content creation
