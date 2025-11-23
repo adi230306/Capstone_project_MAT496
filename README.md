@@ -53,7 +53,7 @@ I plan to execute these steps to complete my project.
 - [DONE] Setting up the project structure and defining the state schema
 - [DONE] Implement the search node with Tavily tool integration
 - [DONE] Build retrieval and parsing node for content extraction
-- [TODO] Step 4 involves creating the research agent node with multi-perspective analysis
+- [DONE] Create the main research agent node
 - [TODO] Step 5 involves implementing the outline generation node with structured output
 - [TODO] Step 6 involves building the drafting node for section-wise content creation
 - [TODO] Step 7 involves creating the synthesis node for coherent article assembly
