@@ -55,7 +55,7 @@ I plan to execute these steps to complete my project.
 - [DONE] Build retrieval and parsing node for content extraction
 - [DONE] Create the main research agent node
 - [DONE] Implement the outline generation node for structured output
-- [TODO] Step 6 involves building the drafting node for section-wise content creation
+- [DONE] Build the draft node for section-wise content generation
 - [TODO] Step 7 involves creating the synthesis node for coherent article assembly
 - [TODO] Step 8 involves adding the refinement node for quality assurance
 - [TODO] Step 9 involves testing the complete workflow with various topics
