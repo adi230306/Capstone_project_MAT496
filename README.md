@@ -59,7 +59,7 @@ I plan to execute these steps to complete my project.
 - [DONE] Synthesis node for assembling together the article
 - [DONE] Refinement node for quality check
 - [DONE] Testing the workflow with various topics
-- [TODO] Step 10 involves documentation and final project submission
+- [DONE] Make frontend using streamlit for taking in input
 
 ## Conclusion:
 

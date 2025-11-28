@@ -17,6 +17,7 @@ class OutlineNode:
         """Generate article outline based on research."""
         research_memory = state["research_memory"]
         topic = state["topic"]
+        custom_title = state.get("title")
         
         if not research_memory:
             return Command(update={"outline": None})
@@ -26,7 +27,7 @@ class OutlineNode:
         # Prepare research summary
         research_summary = self._prepare_research_summary(research_memory)
         
-        outline = self._generate_outline(topic, research_summary)
+        outline = self._generate_outline(topic, custom_title, research_summary)
         
         print(f"✅ Outline generated with {len(outline.sections)} sections")
         
@@ -44,7 +45,7 @@ class OutlineNode:
         
         return "\n".join(summary)
     
-    def _generate_outline(self, topic: str, research_summary: str) -> ArticleOutline:
+    def _generate_outline(self, topic: str, custom_title: str, research_summary: str) -> ArticleOutline:
         """Generate structured article outline."""
         prompt = f"""
         Create a comprehensive Wikipedia-style outline for an article about: {topic}
@@ -59,9 +60,12 @@ class OutlineNode:
         4. Use clear, descriptive section headings
         5. Include 2-3 subsections for main sections
         6. Provide a brief summary of what the article will cover
-        
-        Return as JSON with: title, sections (list with title, subsections), summary
         """
+        
+        if custom_title:
+            prompt += f"\n7. Use this exact title: {custom_title}"
+        
+        prompt += "\n\nReturn as JSON with: title, sections (list with title, subsections), summary"
         
         messages = [
             SystemMessage(content="You are an expert technical writer. Create clear, logical article outlines."),
@@ -71,13 +75,20 @@ class OutlineNode:
         try:
             response = self.llm.invoke(messages)
             outline_data = json.loads(response.content)
+            
+            # If custom title is provided but not used by LLM, override it
+            if custom_title and outline_data.get("title") != custom_title:
+                outline_data["title"] = custom_title
+                print(f"📝 Using custom title: {custom_title}")
+            
             return ArticleOutline(**outline_data)
             
         except Exception as e:
             print(f"Error generating outline: {e}")
             # Return a basic outline as fallback
+            title = custom_title or f"Comprehensive Analysis of {topic}"
             return ArticleOutline(
-                title=f"Comprehensive Analysis of {topic}",
+                title=title,
                 sections=[
                     {"title": "Introduction", "subsections": []},
                     {"title": "Background and Context", "subsections": ["Historical Development", "Key Concepts"]},

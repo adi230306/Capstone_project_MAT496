@@ -1,3 +1,4 @@
+from typing import List
 from langgraph.types import Command
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
@@ -15,7 +16,7 @@ class SynthesisNode:
         draft_sections = state["draft_sections"]
         outline = state["outline"]
         
-        if not draft_sections:
+        if not draft_sections or not outline:
             return Command(update={"final_article": "No content available."})
         
         print("🔗 Synthesizing final article...")
@@ -31,7 +32,7 @@ class SynthesisNode:
         all_content = "\n\n".join(section_contents)
         
         final_article = self._synthesize_article(
-            outline.title,
+            outline.title,  # Use the title from outline (could be custom or generated)
             outline.summary,
             all_content
         )
@@ -52,13 +53,15 @@ class SynthesisNode:
         {content}
         
         Instructions:
-        1. Maintain Wikipedia-style: neutral, factual, comprehensive
-        2. Ensure smooth transitions between sections
-        3. Improve flow and readability
-        4. Maintain consistent tone and style
-        5. Keep all essential information and citations
-        6. Format with proper Markdown headings
-        7. Ensure the article is self-contained and informative
+        1. Start with the title as a level 1 heading: # {title}
+        2. Add the summary as an introductory paragraph
+        3. Maintain Wikipedia-style: neutral, factual, comprehensive
+        4. Ensure smooth transitions between sections
+        5. Improve flow and readability
+        6. Maintain consistent tone and style
+        7. Keep all essential information and citations
+        8. Format with proper Markdown headings
+        9. Ensure the article is self-contained and informative
         
         Return the complete, polished article.
         """

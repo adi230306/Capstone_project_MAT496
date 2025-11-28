@@ -1,3 +1,4 @@
+from typing import List
 from langgraph.types import Command
 from langchain_core.messages import HumanMessage
 from state import ResearchState
@@ -16,7 +17,7 @@ class SearchNode:
         
         print(f"🔍 Searching for: {topic}")
         
-        # Generate search query
+        # Generate search query based on topic
         search_query = self._generate_search_query(topic)
         
         # Perform search
@@ -31,7 +32,7 @@ class SearchNode:
                 }
             )
         
-        print(f"✅ Found {len(search_results)} search results")
+        print(f"Found {len(search_results)} search results")
         
         return Command(
             update={
@@ -43,6 +44,5 @@ class SearchNode:
     
     def _generate_search_query(self, topic: str) -> str:
         """Generate optimized search query from topic."""
-        # In a real implementation, you might use an LLM here
-        # For simplicity, we'll just use the topic directly
-        return f"{topic} recent developments 2024"
+        # Focus search on the topic itself, not the article title
+        return f"{topic} recent developments 2024 research"
