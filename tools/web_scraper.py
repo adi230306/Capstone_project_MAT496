@@ -17,11 +17,9 @@ class WebScraper:
         try:
             response = self.session.get(url, timeout=10)
             response.raise_for_status()
-            
-            # Try trafilatura first for cleaner content extraction
+
             content = self._extract_with_trafilatura(response.text, url)
             if not content:
-                # Fallback to BeautifulSoup
                 content = self._extract_with_bs4(response.text, url)
             
             return content
@@ -55,7 +53,6 @@ class WebScraper:
         """Extract content using BeautifulSoup."""
         soup = BeautifulSoup(html, 'html.parser')
         
-        # Remove unwanted elements
         for element in soup(['script', 'style', 'nav', 'footer']):
             element.decompose()
         
