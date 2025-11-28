@@ -57,8 +57,8 @@ I plan to execute these steps to complete my project.
 - [DONE] Implement the outline generation node for structured output
 - [DONE] Build the draft node for section-wise content generation
 - [DONE] Synthesis node for assembling together the article
-- [TODO] Step 8 involves adding the refinement node for quality assurance
-- [TODO] Step 9 involves testing the complete workflow with various topics
+- [DONE] Refinement node for quality check
+- [DONE] Testing the workflow with various topics
 - [TODO] Step 10 involves documentation and final project submission
 
 ## Conclusion:
