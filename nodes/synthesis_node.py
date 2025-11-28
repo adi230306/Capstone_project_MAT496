@@ -21,7 +21,6 @@ class SynthesisNode:
         
         print(" Synthesizing final article...")
         
-        # Prepare section contents
         section_contents = []
         for section in outline.sections:
             section_title = section["title"]

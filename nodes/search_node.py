@@ -17,10 +17,8 @@ class SearchNode:
         
         print(f" Searching for: {topic}")
         
-        # Generate search query based on topic
         search_query = self._generate_search_query(topic)
         
-        # Perform search
         search_results = self.search_tool.search(search_query, Config.MAX_SEARCH_RESULTS)
         
         if not search_results:
@@ -44,5 +42,4 @@ class SearchNode:
     
     def _generate_search_query(self, topic: str) -> str:
         """Generate optimized search query from topic."""
-        # Focus search on the topic itself, not the article title
         return f"{topic} recent developments 2024 research"

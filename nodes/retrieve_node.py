@@ -29,6 +29,6 @@ class RetrieveNode:
             else:
                 print(f" Failed: {result.url}")
         
-        print(f"🎯 Successfully retrieved {successful_retrievals}/{len(search_results)} sources")
+        print(f" Successfully retrieved {successful_retrievals}/{len(search_results)} sources")
         
         return Command(update={"source_contents": source_contents})

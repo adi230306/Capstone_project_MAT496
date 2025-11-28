@@ -108,7 +108,7 @@ What makes me particularly satisfied is how well this project demonstrates the c
 
 Overall, I'm satisfied with what I've built. It helped me revisit and practically implement all the topics I learned during this course. The project successfully transforms a simple topic query into a comprehensive, cited article through an automated, multi-stage process that demonstrates real-world application of LangGraph principles. While I recognize there's always room for enhancement (like adding more sophisticated search strategies or additional quality checks), the core functionality works as intended and provides a solid foundation for future extensions.
 
-I may be a bit unsatisfied with the current simplicity of some components and wish I had more time to polish certain features, but given the constraints, I believe I've created a meaningful application that genuinely showcases the power of LangGraph for building complex, stateful AI workflows.
+I am a bit unsatisfied with the current simplicity of some components and wish I had more time to polish certain features. I would have liked to implement a chat component to edit the article in real time by taking input from the user in a chatbot style, but I was not able to implement that due to the given time constraints.
 
 ## Project Workflow
 
