@@ -28,9 +28,9 @@ The first purpose of the capstone project is to give a chance to revise all the 
 
 ## Overview
 
-Automates comprehensive web research and article generation. When a user provides a topic (e.g., "The Impact of Quantum Computing on Cryptography"), the agent autonomously performs a multi-stage process:
+Automates comprehensive web research and article generation. When a user provides a topic, the agent autonomously performs a multi-stage process:
 
-Comprehensive Research: Uses web search tools to gather recent and relevant information from various high-quality sources
+Comprehensive Research: Uses Tavily to gather recent and relevant information from various high-quality sources
 
 Multi-Perspective Analysis: Analyzes gathered information by asking critical questions from different angles (technical, historical, ethical, future implications)
 
@@ -106,11 +106,23 @@ The reason for my satisfaction is that the final application is a genuinely func
 
 What makes me particularly satisfied is how well this project demonstrates the core concepts of the course. I implemented a true LangGraph application with proper state management, where the ResearchState object evolves through the entire workflow. Each node has a clear, isolated responsibility, making the system modular, debuggable with LangSmith, and easily extensible. The project successfully integrates all major course topics: from prompting and structured output with Pydantic models, to semantic search in the research phase, RAG for multi-perspective analysis, and tool calling for web search integration.
 
-
 Overall, I'm satisfied with what I've built. It helped me revisit and practically implement all the topics I learned during this course. The project successfully transforms a simple topic query into a comprehensive, cited article through an automated, multi-stage process that demonstrates real-world application of LangGraph principles. While I recognize there's always room for enhancement (like adding more sophisticated search strategies or additional quality checks), the core functionality works as intended and provides a solid foundation for future extensions.
 
 I may be a bit unsatisfied with the current simplicity of some components and wish I had more time to polish certain features, but given the constraints, I believe I've created a meaningful application that genuinely showcases the power of LangGraph for building complex, stateful AI workflows.
 
+## Project Workflow
+
+Landing page
+
+![alt text](image.png)
+
+Add the research topic and click Start Research
+
+![alt text](image.png)
+
+Final article which is available as download also
+
+![alt text](image.png)
 
 ----------
 
