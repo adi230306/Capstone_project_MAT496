@@ -114,11 +114,11 @@ I may be a bit unsatisfied with the current simplicity of some components and wi
 
 Landing page
 
-![alt text](image.png)
+![alt text](image_landing.png)
 
 Add the research topic and click Start Research
 
-![alt text](image.png)
+![alt text](image2.png)
 
 Final article which is available as download also
 
