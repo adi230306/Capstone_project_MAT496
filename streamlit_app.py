@@ -227,14 +227,11 @@ if research_button and topic:
         st.session_state.is_processing = False
         st.session_state.article_generated = True
         
-        # Clear progress indicators
         progress_bar.empty()
         status_placeholder.empty()
         
-        # Show success message
         st.success(" Research completed successfully!")
         
-        # Force a rerun to show results
         st.rerun()
         
     except Exception as e:
@@ -252,13 +249,11 @@ if st.session_state.research_result and st.session_state.research_result.get("su
     article_title = result.get("title", f"Research on: {result.get('topic', 'Unknown Topic')}")
     st.markdown(f"### {article_title}")
     
-    # Article content in an expandable card
     with st.expander("View Full Article", expanded=True):
         st.markdown('<div class="article-card">', unsafe_allow_html=True)
         st.markdown(result.get("final_article", "No article generated."))
         st.markdown('</div>', unsafe_allow_html=True)
     
-    # Download button
     article_text = result.get("final_article", "")
     col_d1, col_d2, col_d3 = st.columns([1, 1, 1])
     
@@ -271,11 +266,9 @@ if st.session_state.research_result and st.session_state.research_result.get("su
             use_container_width=True
         )
 
-# Error display
 elif st.session_state.research_result and not st.session_state.research_result.get("success"):
     st.error(f" Research failed: {st.session_state.research_result.get('error', 'Unknown error')}")
 
-# Instructions when no research has been done
 elif not st.session_state.article_generated:
     st.markdown("---")
     with st.container():
