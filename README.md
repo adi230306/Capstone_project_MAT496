@@ -24,15 +24,50 @@ The first purpose of the capstone project is to give a chance to revise all the 
 
 # Project report Template
 
-## Title: [your title goes here]
+## Title: Automated Web Search and Article Generator
 
 ## Overview
 
-[your overview goes here. My project does this that  etc]
+Automates comprehensive web research and article generation. When a user provides a topic (e.g., "The Impact of Quantum Computing on Cryptography"), the agent autonomously performs a multi-stage process:
+
+Comprehensive Research: Uses web search tools to gather recent and relevant information from various high-quality sources
+
+Multi-Perspective Analysis: Analyzes gathered information by asking critical questions from different angles (technical, historical, ethical, future implications)
+
+Structured Synthesis: Synthesizes information into well-organized, Wikipedia-style articles with proper structure
+
+Fact-Checking & Citation: Maintains a "working memory" of facts and sources, ensuring accuracy and verifiability
+
+This project solves the problem of fragmented research tools by providing an end-to-end solution that transforms a simple query into a polished, structured article with proper citations.
 
 ## Reason for picking up this project
 
-Explain how this project is aligned with this course content.
+This project is perfectly aligned with the course content and comprehensively covers all major topics learned:
+
+The entire research and writing process is naturally modeled as a stateful LangGraph application where:
+Each node has a specific, isolated function
+The state object carries context through the workflow
+
+The graph structure makes the system debuggable with LangSmith and easily extensible
+
+Course Topics Covered:
+1. Prompting: Used throughout the workflow to guide LLM reasoning at each stage
+
+2. Structured Output: Implemented using Pydantic models for consistent data structures (SearchResult, ResearchFact, ArticleOutline, etc.)
+
+3. Semantic Search: Powers the research agent node for analyzing and retrieving relevant information
+
+4. RAG (Retrieval Augmented Generation): Core to the research agent node for analyzing gathered data with multi-perspective analysis
+
+5. Tool Calling LLMs & MCP: Integrates web search APIs (search tools) and web scraping tools for data collection
+
+6. LangGraph Core Concepts:
+
+  State: ResearchState TypedDict that evolves through the workflow
+
+  Nodes: 7 specialized nodes (search, retrieve, research, outline, draft, synthesize, refine)
+
+  Graph: Sequential workflow with clear state transitions
 
 ## Video Summary Link: 
 
@@ -63,7 +98,19 @@ I plan to execute these steps to complete my project.
 
 ## Conclusion:
 
-I had planned to achieve {this this}. I think I have/have-not achieved the conclusion satisfactorily. The reason for your satisfaction/unsatisfaction.
+I had planned to build a robust, autonomous Research Agent that could take a simple topic and perform comprehensive web research and article generation - the kind of deep, multi-source analysis that usually takes hours of manual work. My goal was to leverage the full power of LangGraph to create a sequential, stateful workflow that performs systematic research, analyzes information from multiple perspectives using RAG, and generates polished, Wikipedia-style articles with proper citations.
+
+I think I have achieved this conclusion satisfactorily.
+
+The reason for my satisfaction is that the final application is a genuinely functional research automation tool. I successfully implemented a comprehensive 7-node LangGraph workflow that autonomously performs each research stage: from web searching and content retrieval, through multi-perspective analysis using semantic search and RAG techniques, to structured outline generation, section drafting, and final article synthesis. The agent maintains a working memory of facts and sources throughout the process, ensuring the final output is not only informative but also verifiable through proper citations.
+
+What makes me particularly satisfied is how well this project demonstrates the core concepts of the course. I implemented a true LangGraph application with proper state management, where the ResearchState object evolves through the entire workflow. Each node has a clear, isolated responsibility, making the system modular, debuggable with LangSmith, and easily extensible. The project successfully integrates all major course topics: from prompting and structured output with Pydantic models, to semantic search in the research phase, RAG for multi-perspective analysis, and tool calling for web search integration.
+
+
+Overall, I'm satisfied with what I've built. It helped me revisit and practically implement all the topics I learned during this course. The project successfully transforms a simple topic query into a comprehensive, cited article through an automated, multi-stage process that demonstrates real-world application of LangGraph principles. While I recognize there's always room for enhancement (like adding more sophisticated search strategies or additional quality checks), the core functionality works as intended and provides a solid foundation for future extensions.
+
+I may be a bit unsatisfied with the current simplicity of some components and wish I had more time to polish certain features, but given the constraints, I believe I've created a meaningful application that genuinely showcases the power of LangGraph for building complex, stateful AI workflows.
+
 
 ----------
 

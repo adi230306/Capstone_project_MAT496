@@ -15,7 +15,7 @@ class SearchNode:
         """Execute search for the given topic."""
         topic = state["topic"]
         
-        print(f"🔍 Searching for: {topic}")
+        print(f" Searching for: {topic}")
         
         # Generate search query based on topic
         search_query = self._generate_search_query(topic)

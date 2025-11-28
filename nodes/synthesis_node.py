@@ -19,7 +19,7 @@ class SynthesisNode:
         if not draft_sections or not outline:
             return Command(update={"final_article": "No content available."})
         
-        print("🔗 Synthesizing final article...")
+        print(" Synthesizing final article...")
         
         # Prepare section contents
         section_contents = []

@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 # Set page config
 st.set_page_config(
     page_title="AutoResearch Agent",
-    page_icon="🔍",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -59,7 +59,7 @@ if 'article_generated' not in st.session_state:
     st.session_state.article_generated = False
 
 # Title and description
-st.markdown('<h1 class="main-header">🔍 AutoResearch Agent</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-header"> AutoResearch Agent</h1>', unsafe_allow_html=True)
 st.markdown("""
 <p style="text-align: center; font-size: 1.2rem; color: #666;">
 An intelligent agent that automates comprehensive web research and article generation
@@ -68,7 +68,7 @@ An intelligent agent that automates comprehensive web research and article gener
 
 # Sidebar for additional options
 with st.sidebar:
-    st.markdown("### ⚙️ Settings")
+    st.markdown( "⚙️ Settings")
     
     # API Configuration
     st.markdown("#### API Configuration")
@@ -95,7 +95,7 @@ with st.sidebar:
     )
     
     st.markdown("---")
-    st.markdown("### 📊 About")
+    st.markdown("### About")
     st.markdown("""
     **AutoResearch Agent** uses LangGraph to:
     - Search the web for recent information
@@ -108,7 +108,7 @@ with st.sidebar:
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    st.markdown('<h3 class="sub-header">📝 Research Topic</h3>', unsafe_allow_html=True)
+    st.markdown('<h3 class="sub-header"> Research Topic</h3>', unsafe_allow_html=True)
     
     # Topic input
     topic = st.text_area(
@@ -129,7 +129,7 @@ with col1:
         )
 
 with col2:
-    st.markdown('<h3 class="sub-header">📊 Research Metrics</h3>', unsafe_allow_html=True)
+    st.markdown('<h3 class="sub-header"> Research Metrics</h3>', unsafe_allow_html=True)
     
     # Display metrics if research has been done
     if st.session_state.research_result and st.session_state.research_result.get("success"):
@@ -148,7 +148,7 @@ with col2:
         
         with metric_cols[2]:
             st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-            st.metric("Status", "✅ Success")
+            st.metric("Status", " Success")
             st.markdown('</div>', unsafe_allow_html=True)
         
         # Article length
@@ -199,13 +199,13 @@ if research_button and topic:
     
     # Simulate progress updates
     progress_stages = [
-        "🔍 Searching the web...",
-        "📥 Retrieving content...",
-        "🔬 Analyzing information...",
-        "📝 Generating outline...",
-        "✍️ Drafting sections...",
-        "🔗 Synthesizing article...",
-        "✨ Final refinement..."
+        " Searching the web...",
+        " Retrieving content...",
+        " Analyzing information...",
+        " Generating outline...",
+        " Drafting sections...",
+        " Synthesizing article...",
+        " Final refinement..."
     ]
     
     try:
@@ -232,19 +232,19 @@ if research_button and topic:
         status_placeholder.empty()
         
         # Show success message
-        st.success("✅ Research completed successfully!")
+        st.success(" Research completed successfully!")
         
         # Force a rerun to show results
         st.rerun()
         
     except Exception as e:
-        st.error(f"❌ Error during research: {str(e)}")
+        st.error(f" Error during research: {str(e)}")
         st.session_state.is_processing = False
 
 # Display the article if generated
 if st.session_state.research_result and st.session_state.research_result.get("success"):
     st.markdown("---")
-    st.markdown('<h2 class="sub-header">📄 Generated Article</h2>', unsafe_allow_html=True)
+    st.markdown('<h2 class="sub-header"> Generated Article</h2>', unsafe_allow_html=True)
     
     result = st.session_state.research_result
     
@@ -264,7 +264,7 @@ if st.session_state.research_result and st.session_state.research_result.get("su
     
     with col_d2:
         st.download_button(
-            label="📥 Download Article",
+            label=" Download Article",
             data=article_text,
             file_name=f"research_article_{result.get('topic', 'article').replace(' ', '_')}.md",
             mime="text/markdown",
@@ -273,13 +273,13 @@ if st.session_state.research_result and st.session_state.research_result.get("su
 
 # Error display
 elif st.session_state.research_result and not st.session_state.research_result.get("success"):
-    st.error(f"❌ Research failed: {st.session_state.research_result.get('error', 'Unknown error')}")
+    st.error(f" Research failed: {st.session_state.research_result.get('error', 'Unknown error')}")
 
 # Instructions when no research has been done
 elif not st.session_state.article_generated:
     st.markdown("---")
     with st.container():
-        st.markdown("### 📋 How to use:")
+        st.markdown("###  How to use:")
         col_i1, col_i2, col_i3 = st.columns(3)
         
         with col_i1:
@@ -307,7 +307,7 @@ elif not st.session_state.article_generated:
             """)
     
     # Example topics
-    st.markdown("### 💡 Example Topics:")
+    st.markdown("###  Example Topics:")
     examples = [
         "The Impact of Quantum Computing on Cryptography",
         "Recent Advances in Renewable Energy Storage",

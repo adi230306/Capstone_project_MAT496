@@ -21,17 +21,17 @@ class ResearchNode:
         if not source_contents:
             return Command(update={"research_memory": {}})
         
-        print(f"🔬 Analyzing content from {len(source_contents)} sources...")
+        print(f" Analyzing content from {len(source_contents)} sources...")
         
         research_memory = {}
         
         for perspective in Config.RESEARCH_PERSPECTIVES:
-            print(f"  📊 Perspective: {perspective}")
+            print(f"  Perspective: {perspective}")
             facts = self._analyze_perspective(topic, perspective, source_contents)
             research_memory[perspective] = facts
         
         total_facts = sum(len(facts) for facts in research_memory.values())
-        print(f"🎯 Extracted {total_facts} facts across {len(Config.RESEARCH_PERSPECTIVES)} perspectives")
+        print(f" Extracted {total_facts} facts across {len(Config.RESEARCH_PERSPECTIVES)} perspectives")
         
         return Command(update={"research_memory": research_memory})
     

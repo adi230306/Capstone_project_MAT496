@@ -26,7 +26,7 @@ class DraftNode:
         
         for i, section in enumerate(outline.sections):
             section_title = section["title"]
-            print(f"  📄 Drafting: {section_title}")
+            print(f" Drafting: {section_title}")
             
             # Get relevant facts for this section
             relevant_facts = self._get_relevant_facts(section_title, research_memory)
@@ -41,7 +41,7 @@ class DraftNode:
             
             draft_sections[section_title] = section_draft
         
-        print("✅ All sections drafted")
+        print(" All sections drafted")
         
         return Command(update={"draft_sections": draft_sections})
     

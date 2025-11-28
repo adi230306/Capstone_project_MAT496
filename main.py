@@ -44,7 +44,7 @@ class AutoResearchAgent:
     
     async def research(self, topic: str) -> dict:
         """Execute research workflow for a given topic."""
-        print(f"🚀 Starting research on: {topic}")
+        print(f" Starting research on: {topic}")
         print("=" * 50)
         
         try:
@@ -65,7 +65,7 @@ class AutoResearchAgent:
             final_state = await self.graph.ainvoke(initial_state)
             
             print("=" * 50)
-            print("🎉 Research completed successfully!")
+            print(" Research completed successfully!")
             
             return {
                 "success": True,
@@ -76,7 +76,7 @@ class AutoResearchAgent:
             }
             
         except Exception as e:
-            print(f"❌ Research failed: {e}")
+            print(f" Research failed: {e}")
             return {
                 "success": False,
                 "error": str(e),
@@ -101,11 +101,11 @@ async def main():
         result = await agent.research(topic)
         
         if result["success"]:
-            print(f"\n📊 Research Summary:")
+            print(f"\n Research Summary:")
             print(f"   Topic: {result['topic']}")
             print(f"   Sources: {result['sources_used']}")
             print(f"   Facts Extracted: {result['research_facts']}")
-            print(f"\n📄 Final Article:")
+            print(f"\n Final Article:")
             print("=" * 50)
             print(result["final_article"])
             print("=" * 50)

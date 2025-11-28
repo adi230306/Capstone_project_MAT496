@@ -27,7 +27,7 @@ class RefinementNode:
         
         final_output = f"{refined_article}\n\n## References\n\n{citations}"
         
-        print("✅ Article refinement complete")
+        print(" Article refinement complete")
         
         return Command(update={"final_article": final_output})
     

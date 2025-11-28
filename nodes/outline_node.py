@@ -22,14 +22,14 @@ class OutlineNode:
         if not research_memory:
             return Command(update={"outline": None})
         
-        print("📝 Generating article outline...")
+        print(" Generating article outline...")
         
         # Prepare research summary
         research_summary = self._prepare_research_summary(research_memory)
         
         outline = self._generate_outline(topic, custom_title, research_summary)
         
-        print(f"✅ Outline generated with {len(outline.sections)} sections")
+        print(f" Outline generated with {len(outline.sections)} sections")
         
         return Command(update={"outline": outline})
     
@@ -79,7 +79,7 @@ class OutlineNode:
             # If custom title is provided but not used by LLM, override it
             if custom_title and outline_data.get("title") != custom_title:
                 outline_data["title"] = custom_title
-                print(f"📝 Using custom title: {custom_title}")
+                print(f" Using custom title: {custom_title}")
             
             return ArticleOutline(**outline_data)
             
