@@ -22,7 +22,6 @@ class RefinementNode:
         
         refined_article = self._refine_article(final_article, research_memory)
         
-        # Generate citations section
         citations = self._generate_citations(research_memory)
         
         final_output = f"{refined_article}\n\n## References\n\n{citations}"

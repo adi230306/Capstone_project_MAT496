@@ -24,7 +24,6 @@ class OutlineNode:
         
         print(" Generating article outline...")
         
-        # Prepare research summary
         research_summary = self._prepare_research_summary(research_memory)
         
         outline = self._generate_outline(topic, custom_title, research_summary)
@@ -85,7 +84,6 @@ class OutlineNode:
             
         except Exception as e:
             print(f"Error generating outline: {e}")
-            # Return a basic outline as fallback
             title = custom_title or f"Comprehensive Analysis of {topic}"
             return ArticleOutline(
                 title=title,
